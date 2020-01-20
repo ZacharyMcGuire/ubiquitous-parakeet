@@ -1,0 +1,11 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'forum/style.css' %}"
+
+<p></p>
+{% for board in board_list %}
+    <h1>{{board.board_title}}</h1>
+    {% for topic in board.get_topics_in_board %}
+        <li>{{topic.topic_title}}</li>
+    {% endfor %}
+{% endfor %}
