@@ -9,10 +9,8 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Board.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["topic_list"] = Topic.objects.all()
-        return context
     
+class TopicView(generic.DetailView):
+    template_name = 'forum/topic.html'
+    model = Topic
     
